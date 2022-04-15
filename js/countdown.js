@@ -6,11 +6,23 @@ class Timer {
       minutes: root.querySelector(".timer__part--minutes"),
       seconds: root.querySelector(".timer__part--seconds"),
       control: root.querySelector(".timer__btn--control"),
-      reset: root.querySelector(".timer__btn--reset")
+      reset: root.querySelector(".timer__btn--reset"),
+      work: root.querySelector(".work"),
+      shortbreak: root.querySelector(".sb"),
+      longbreak: root.querySelector(".lb")
     };
 
     this.interval = null;
     this.remainingSeconds = 0;
+
+    this.el.work.addEventListener("click", () =>{
+      if(this.interval === null) {
+        this.interval = 25 * 1000;
+        this.start();
+      } else{
+        this.stop;
+      }
+    })
 
     this.el.control.addEventListener("click", () => {
       if (this.interval === null) {
